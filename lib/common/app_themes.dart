@@ -4,21 +4,20 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppThemes {
-static ThemeData lightTheme = ThemeData(
+  static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     textTheme: GoogleFonts.interTextTheme(),
-    scaffoldBackgroundColor: AppColors.white,
-    appBarTheme: AppBarTheme(
-      backgroundColor: AppColors.white,
-      surfaceTintColor: AppColors.white,
+    scaffoldBackgroundColor: const Color(0xFFFAFAFA),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Color(0xFFFAFAFA),
+      surfaceTintColor: Color(0xFFFAFAFA),
       centerTitle: true,
       elevation: 0,
-      systemOverlayStyle: const SystemUiOverlayStyle(
+      systemOverlayStyle: SystemUiOverlayStyle(
         systemNavigationBarColor: AppColors.white,
         statusBarColor: AppColors.white,
         systemNavigationBarIconBrightness: Brightness.dark,
       ),
     ),
-    
   );
 }

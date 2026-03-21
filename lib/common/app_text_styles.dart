@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-
 class AppTextStyle {
-	/*static TextStyle getAppTextStyle(
+  /*static TextStyle getAppTextStyle(
 		{double size = 14,
 		FontWeight weight = FontWeight.normal,
 		FontStyle style = FontStyle.normal,

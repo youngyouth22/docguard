@@ -1,5 +1,7 @@
 import 'package:docguard/common/app_colors.dart';
 import 'package:docguard/core/navigation/app_router.dart';
+import 'package:docguard/di/injection.dart';
+import 'package:docguard/core/services/persistence_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -53,7 +55,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               Align(
                 alignment: Alignment.topRight,
                 child: TextButton(
-                  onPressed: () => context.go(AppRouter.login),
+                  onPressed: () {
+                    getIt<PersistenceService>().incrementOnboardingSeenCount();
+                    context.go(AppRouter.login);
+                  },
                   child: const Text('Skip'),
                 ),
               ),
@@ -144,6 +149,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             curve: Curves.easeInOut,
                           );
                         } else {
+                          getIt<PersistenceService>()
+                              .incrementOnboardingSeenCount();
                           context.go(AppRouter.login);
                         }
                       },

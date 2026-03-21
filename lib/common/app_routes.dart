@@ -1,4 +1,3 @@
-
 class AppRoutes {
-	static final String root = "/";
+  static final String root = "/";
 }

@@ -5,6 +5,10 @@ import 'package:docguard/features/auth/presentation/blocs/auth_bloc.dart';
 import 'package:docguard/features/auth/presentation/blocs/forgot_password_bloc.dart';
 import 'package:docguard/features/auth/presentation/blocs/login_bloc.dart';
 import 'package:docguard/features/auth/presentation/blocs/register_bloc.dart';
+import 'package:docguard/features/documents/presentation/blocs/document_bloc.dart';
+import 'package:docguard/features/documents/presentation/blocs/document_event.dart';
+import 'package:docguard/features/sync/presentation/bloc/sync_bloc.dart';
+import 'package:docguard/features/sync/presentation/bloc/sync_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -19,7 +23,6 @@ void main() async {
     url: dotenv.env['SUPABASE_URL']!,
     anonKey: dotenv.env['SUPABASE_ANON_KEY']!,
   );
-
 
   await setupDependencyInjection();
 
@@ -39,6 +42,13 @@ class MainApp extends StatelessWidget {
         BlocProvider(create: (_) => getIt<LoginBloc>()),
         BlocProvider(create: (_) => getIt<RegisterBloc>()),
         BlocProvider(create: (_) => getIt<ForgotPasswordBloc>()),
+        BlocProvider(
+          create: (_) =>
+              getIt<DocumentBloc>()..add(const DocumentEvent.started()),
+        ),
+        BlocProvider(
+          create: (_) => getIt<SyncBloc>()..add(const SyncEvent.syncStarted()),
+        ),
       ],
       child: Builder(
         builder: (context) {

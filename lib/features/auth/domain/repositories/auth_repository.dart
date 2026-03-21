@@ -30,4 +30,13 @@ abstract class AuthRepository {
 
   /// Verifies email (if applicable for the provider).
   Future<Either<Failure, Unit>> verifyEmail();
+
+  /// Verifies an OTP for the given email and type.
+  Future<Either<Failure, UserEntity>> verifyOtp({
+    required String email,
+    required String token,
+  });
+
+  /// Resends an OTP to the given email.
+  Future<Either<Failure, Unit>> resendOtp({required String email});
 }

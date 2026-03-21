@@ -4,6 +4,10 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   app_links
+  powersync_flutter_libs
+  share_plus
+  sqlite3_flutter_libs
+  syncfusion_pdfviewer_windows
   url_launcher_windows
 )
 

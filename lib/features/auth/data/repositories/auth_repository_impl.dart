@@ -111,4 +111,39 @@ class AuthRepositoryImpl implements AuthRepository {
     // This could also be a check if the user is verified.
     return const Right(unit);
   }
+
+  @override
+  Future<Either<Failure, UserModel>> verifyOtp({
+    required String email,
+    required String token,
+  }) async {
+    try {
+      final response = await _client.auth.verifyOTP(
+        email: email,
+        token: token,
+        type: supabase.OtpType.signup,
+      );
+      if (response.user != null) {
+        return Right(UserModel.fromSupabaseUser(response.user!));
+      } else {
+        return const Left(AuthFailure('Invalid OTP or verification failed'));
+      }
+    } on supabase.AuthException catch (e) {
+      return Left(AuthFailure(e.message));
+    } catch (e) {
+      return Left(AuthFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> resendOtp({required String email}) async {
+    try {
+      await _client.auth.resend(type: supabase.OtpType.signup, email: email);
+      return const Right(unit);
+    } on supabase.AuthException catch (e) {
+      return Left(AuthFailure(e.message));
+    } catch (e) {
+      return Left(AuthFailure(e.toString()));
+    }
+  }
 }

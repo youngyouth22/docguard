@@ -43,8 +43,17 @@ class _LoginScreenState extends State<LoginScreen> {
           if (state.status == LoginStatus.success) {
             context.go(AppRouter.dashboard);
           }
+          if (state.status == LoginStatus.needsVerification) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Email not verified. Redirecting to OTP...'),
+                backgroundColor: AppColors.primary400,
+              ),
+            );
+            context.push(AppRouter.verifyOtp, extra: state.email);
+          }
         },
-        
+
         child: SafeArea(
           child: SingleChildScrollView(
             padding: const EdgeInsets.symmetric(horizontal: 24),

@@ -46,77 +46,71 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             Navigator.of(context).pop();
           }
         },
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 20),
-                  const CircleAvatar(
-                    radius: 30,
-                    backgroundColor: AppColors.primary25,
-                    child: Icon(
-                      Icons.key_rounded,
-                      color: AppColors.primary400,
-                      size: 30,
-                    ),
-                  ).animate().scale(),
-                  const SizedBox(height: 24),
-                  Text(
-                    'Forgot Password?',
-                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.grey800,
-                    ),
-                  ).animate().fadeIn().slideX(begin: -0.1, end: 0),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Enter your email address and we will send you instructions to reset your password.',
-                    style: Theme.of(
-                      context,
-                    ).textTheme.bodyLarge?.copyWith(color: AppColors.grey500),
-                  ).animate().fadeIn(delay: 200.ms),
-                  const SizedBox(height: 40),
-                  CustomTextField(
-                    label: 'Email',
-                    hint: 'Enter your email',
-                    icon: Icons.email_rounded,
-                    controller: _emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Email is required';
-                      }
-                      if (!RegExp(
-                        r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
-                      ).hasMatch(value)) {
-                        return 'Invalid email format';
-                      }
-                      return null;
-                    },
-                  ).animate().fadeIn(delay: 400.ms),
-                  const SizedBox(height: 48),
-                  BlocBuilder<ForgotPasswordBloc, ForgotPasswordState>(
-                    builder: (context, state) {
-                      return CustomButton(
-                        text: 'Send Instructions',
-                        isLoading: state.status == ForgotPasswordStatus.loading,
-                        onPressed: () {
-                          if (_formKey.currentState!.validate()) {
-                            context.read<ForgotPasswordBloc>().add(
-                              ForgotPasswordEvent.resetPasswordRequested(
-                                _emailController.text.trim(),
-                              ),
-                            );
-                          }
-                        },
-                      );
-                    },
-                  ).animate().fadeIn(delay: 500.ms),
-                ],
+        child: SingleChildScrollView(
+          child: SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 20),
+                    Text(
+                      'Forgot Password?',
+                      style: Theme.of(context).textTheme.headlineSmall
+                          ?.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.grey800,
+                          ),
+                    ).animate().fadeIn().slideX(begin: -0.1, end: 0),
+                    const SizedBox(height: 8),
+                    Text(
+                      'Enter your email address and we will send you instructions to reset your password.',
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodyLarge?.copyWith(color: AppColors.grey500),
+                    ).animate().fadeIn(delay: 200.ms),
+                    const SizedBox(height: 40),
+                    CustomTextField(
+                      label: 'Email',
+                      hint: 'Enter your email',
+                      // icon: Icons.email_rounded,
+                      controller: _emailController,
+                      keyboardType: TextInputType.emailAddress,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Email is required';
+                        }
+                        if (!RegExp(
+                          r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+                        ).hasMatch(value)) {
+                          return 'Invalid email format';
+                        }
+                        return null;
+                      },
+                    ).animate().fadeIn(delay: 400.ms),
+                    const SizedBox(height: 48),
+                    BlocBuilder<ForgotPasswordBloc, ForgotPasswordState>(
+                      builder: (context, state) {
+                        return CustomButton(
+                          text: 'Send Instructions',
+                          isLoading:
+                              state.status == ForgotPasswordStatus.loading,
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              context.read<ForgotPasswordBloc>().add(
+                                ForgotPasswordEvent.resetPasswordRequested(
+                                  _emailController.text.trim(),
+                                ),
+                              );
+                            }
+                          },
+                        );
+                      },
+                    ).animate().fadeIn(delay: 500.ms),
+                  ],
+                ),
               ),
             ),
           ),

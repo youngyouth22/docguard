@@ -6,175 +6,175 @@ class AppTypography {
     fontSize: 48,
     fontWeight: FontWeight.w700,
   );
-  static TextStyle h1SemiBold =GoogleFonts.inter(
+  static TextStyle h1SemiBold = GoogleFonts.inter(
     fontSize: 48,
     fontWeight: FontWeight.w600,
   );
-  static TextStyle h1Medium =GoogleFonts.inter(
+  static TextStyle h1Medium = GoogleFonts.inter(
     fontSize: 48,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle h1Regular =GoogleFonts.inter(
+  static TextStyle h1Regular = GoogleFonts.inter(
     fontSize: 48,
     fontWeight: FontWeight.w400,
   );
-  static TextStyle h2Bold =GoogleFonts.inter(
+  static TextStyle h2Bold = GoogleFonts.inter(
     fontSize: 40,
     fontWeight: FontWeight.w700,
   );
-  static TextStyle h2SemiBold =GoogleFonts.inter(
+  static TextStyle h2SemiBold = GoogleFonts.inter(
     fontSize: 40,
     fontWeight: FontWeight.w600,
   );
-  static TextStyle h2Medium =GoogleFonts.inter(
+  static TextStyle h2Medium = GoogleFonts.inter(
     fontSize: 40,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle h2Regular =GoogleFonts.inter(
+  static TextStyle h2Regular = GoogleFonts.inter(
     fontSize: 40,
     fontWeight: FontWeight.w400,
   );
-  static TextStyle h3Bold =GoogleFonts.inter(
+  static TextStyle h3Bold = GoogleFonts.inter(
     fontSize: 32,
     fontWeight: FontWeight.w700,
   );
-  static TextStyle h3SemiBold =GoogleFonts.inter(
+  static TextStyle h3SemiBold = GoogleFonts.inter(
     fontSize: 32,
     fontWeight: FontWeight.w600,
   );
-  static TextStyle h3Medium =GoogleFonts.inter(
+  static TextStyle h3Medium = GoogleFonts.inter(
     fontSize: 32,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle h3Regular =GoogleFonts.inter(
+  static TextStyle h3Regular = GoogleFonts.inter(
     fontSize: 32,
     fontWeight: FontWeight.w400,
   );
-  static TextStyle h4Bold =GoogleFonts.inter(
+  static TextStyle h4Bold = GoogleFonts.inter(
     fontSize: 24,
     fontWeight: FontWeight.w700,
   );
-  static TextStyle h4SemiBold =GoogleFonts.inter(
+  static TextStyle h4SemiBold = GoogleFonts.inter(
     fontSize: 24,
     fontWeight: FontWeight.w600,
   );
-  static TextStyle h4Medium =GoogleFonts.inter(
+  static TextStyle h4Medium = GoogleFonts.inter(
     fontSize: 24,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle h4Regular =GoogleFonts.inter(
+  static TextStyle h4Regular = GoogleFonts.inter(
     fontSize: 24,
     fontWeight: FontWeight.w400,
   );
-  static TextStyle h5Bold =GoogleFonts.inter(
+  static TextStyle h5Bold = GoogleFonts.inter(
     fontSize: 20,
     fontWeight: FontWeight.w700,
   );
-  static TextStyle h5SemiBold =GoogleFonts.inter(
+  static TextStyle h5SemiBold = GoogleFonts.inter(
     fontSize: 20,
     fontWeight: FontWeight.w600,
   );
-  static TextStyle h5Medium =GoogleFonts.inter(
+  static TextStyle h5Medium = GoogleFonts.inter(
     fontSize: 20,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle h5Regular =GoogleFonts.inter(
+  static TextStyle h5Regular = GoogleFonts.inter(
     fontSize: 20,
     fontWeight: FontWeight.w400,
   );
-  static TextStyle h6Bold =GoogleFonts.inter(
+  static TextStyle h6Bold = GoogleFonts.inter(
     fontSize: 18,
     fontWeight: FontWeight.w700,
   );
-  static TextStyle h6SemiBold =GoogleFonts.inter(
+  static TextStyle h6SemiBold = GoogleFonts.inter(
     fontSize: 18,
     fontWeight: FontWeight.w600,
   );
-  static TextStyle h6Medium =GoogleFonts.inter(
+  static TextStyle h6Medium = GoogleFonts.inter(
     fontSize: 18,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle h6Regular =GoogleFonts.inter(
+  static TextStyle h6Regular = GoogleFonts.inter(
     fontSize: 18,
     fontWeight: FontWeight.w400,
   );
-  static TextStyle bodyXlBold =GoogleFonts.inter(
+  static TextStyle bodyXlBold = GoogleFonts.inter(
     fontSize: 18,
     fontWeight: FontWeight.w700,
   );
-  static TextStyle bodyXlSemiBold =GoogleFonts.inter(
+  static TextStyle bodyXlSemiBold = GoogleFonts.inter(
     fontSize: 18,
     fontWeight: FontWeight.w600,
   );
-  static TextStyle bodyXlMedium =GoogleFonts.inter(
+  static TextStyle bodyXlMedium = GoogleFonts.inter(
     fontSize: 18,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle bodyXlRegular =GoogleFonts.inter(
+  static TextStyle bodyXlRegular = GoogleFonts.inter(
     fontSize: 18,
     fontWeight: FontWeight.w400,
   );
-  static TextStyle bodyLBold =GoogleFonts.inter(
+  static TextStyle bodyLBold = GoogleFonts.inter(
     fontSize: 16,
     fontWeight: FontWeight.w700,
   );
-  static TextStyle bodyLSemiBold =GoogleFonts.inter(
+  static TextStyle bodyLSemiBold = GoogleFonts.inter(
     fontSize: 16,
     fontWeight: FontWeight.w600,
   );
-  static TextStyle bodyLMedium =GoogleFonts.inter(
+  static TextStyle bodyLMedium = GoogleFonts.inter(
     fontSize: 16,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle bodyLRegular =GoogleFonts.inter(
+  static TextStyle bodyLRegular = GoogleFonts.inter(
     fontSize: 16,
     fontWeight: FontWeight.w400,
   );
-  static TextStyle bodyMBold =GoogleFonts.inter(
+  static TextStyle bodyMBold = GoogleFonts.inter(
     fontSize: 14,
     fontWeight: FontWeight.w700,
   );
-  static TextStyle bodyMSemiBold =GoogleFonts.inter(
+  static TextStyle bodyMSemiBold = GoogleFonts.inter(
     fontSize: 14,
     fontWeight: FontWeight.w600,
   );
-  static TextStyle bodyMMedium =GoogleFonts.inter(
+  static TextStyle bodyMMedium = GoogleFonts.inter(
     fontSize: 14,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle bodyMRegular =GoogleFonts.inter(
+  static TextStyle bodyMRegular = GoogleFonts.inter(
     fontSize: 14,
     fontWeight: FontWeight.w400,
   );
-  static TextStyle bodySBold =GoogleFonts.inter(
+  static TextStyle bodySBold = GoogleFonts.inter(
     fontSize: 12,
     fontWeight: FontWeight.w700,
   );
-  static TextStyle bodySSemiBold =GoogleFonts.inter(
+  static TextStyle bodySSemiBold = GoogleFonts.inter(
     fontSize: 12,
     fontWeight: FontWeight.w600,
   );
-  static TextStyle bodySMedium =GoogleFonts.inter(
+  static TextStyle bodySMedium = GoogleFonts.inter(
     fontSize: 12,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle bodySRegular =GoogleFonts.inter(
+  static TextStyle bodySRegular = GoogleFonts.inter(
     fontSize: 12,
     fontWeight: FontWeight.w400,
   );
-  static TextStyle bodyXsBold =GoogleFonts.inter(
+  static TextStyle bodyXsBold = GoogleFonts.inter(
     fontSize: 10,
     fontWeight: FontWeight.w700,
   );
-  static TextStyle bodyXsSemiBold =GoogleFonts.inter(
+  static TextStyle bodyXsSemiBold = GoogleFonts.inter(
     fontSize: 10,
     fontWeight: FontWeight.w600,
   );
-  static TextStyle bodyXsMedium =GoogleFonts.inter(
+  static TextStyle bodyXsMedium = GoogleFonts.inter(
     fontSize: 10,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle bodyXsRegular =GoogleFonts.inter(
+  static TextStyle bodyXsRegular = GoogleFonts.inter(
     fontSize: 10,
     fontWeight: FontWeight.w400,
   );

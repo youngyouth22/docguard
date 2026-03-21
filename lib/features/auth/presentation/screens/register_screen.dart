@@ -46,12 +46,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
                 content: Text(
-                  'Account created! Please check your email to verify.',
+                  'Account created! Please enter the OTP sent to your email.',
                 ),
                 backgroundColor: AppColors.success400,
               ),
             );
-            context.go(AppRouter.login);
+            context.push(
+              AppRouter.verifyOtp,
+              extra: _emailController.text.trim(),
+            );
           }
         },
         child: SafeArea(
@@ -81,7 +84,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   CustomTextField(
                     label: 'Email',
                     hint: 'Enter your email',
-                    icon: Icons.email_rounded,
+                    // icon: Icons.email_rounded,
                     controller: _emailController,
                     keyboardType: TextInputType.emailAddress,
                     validator: (value) {
@@ -102,7 +105,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       return CustomTextField(
                         label: 'Password',
                         hint: 'Create a password',
-                        icon: Icons.lock_rounded,
+                        // icon: Icons.lock_rounded,
                         controller: _passwordController,
                         isPassword: true,
                         obscureText: state.obscurePassword,
@@ -129,7 +132,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       return CustomTextField(
                         label: 'Confirm Password',
                         hint: 'Confirm your password',
-                        icon: Icons.lock_outline_rounded,
+                        // icon: Icons.lock_outline_rounded,
                         controller: _confirmPasswordController,
                         isPassword: true,
                         obscureText: state.obscureConfirmPassword,
