@@ -195,17 +195,11 @@ Future<String?> getLocalDocumentPath(
       return null;
     }
 
-    final state = results['state'] as int?;
     final localUri = results['local_uri'] as String?;
 
-    // Vérifier que l'état est SYNCED (valeur 3)
-    if (state != 3) {
-      debugPrint('⏳ Attachment $fileId not synced yet (state: $state)');
-      return null;
-    }
-
+    // Vérifier que le local_uri est présent
     if (localUri == null || localUri.isEmpty) {
-      debugPrint('⚠️ Attachment $fileId has no local_uri despite being synced');
+      debugPrint('⚠️ Attachment $fileId has no local_uri');
       return null;
     }
 
@@ -260,7 +254,7 @@ Stream<String?> watchLocalDocumentPath(
 
     debugPrint('🔍 [Queue] ID: $fileId, State: $state, localUri: $localUri');
 
-    if (state != 3 || localUri == null || localUri.isEmpty) {
+    if (localUri == null || localUri.isEmpty) {
       return null;
     }
 
@@ -304,10 +298,9 @@ Future<String?> getLocalPath(String fileId, PowerSyncDatabase db) async {
 
   if (results == null) return null;
 
-  final state = results['state'] as int?;
   final localUri = results['local_uri'] as String?;
 
-  if (state != 3 || localUri == null || localUri.isEmpty) {
+  if (localUri == null || localUri.isEmpty) {
     return null;
   }
 

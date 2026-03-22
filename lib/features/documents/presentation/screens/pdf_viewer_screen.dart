@@ -556,8 +556,8 @@ class _PdfViewerScreenState extends State<PdfViewerScreen>
           );
         }
 
-        // Si on est en train de synchroniser (state != 3), snapshot.data est null
-        // On peut montrer un message d'attente plus sympa
+        // If the document is not yet found locally (no local_uri or file not on disk),
+        // we show a nice waiting message.
         return _buildLoadingOrWaitingState();
       },
     );
